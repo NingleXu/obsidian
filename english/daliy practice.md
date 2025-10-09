@@ -1,0 +1,16 @@
+
+我现在要去用手机规划一下节假日的安排。
+ i want to use my phone and schedule my holiday
+ i'm gonna use my phone to plan my holidays
+
+
+Do you played compute game  last night?
+
+
+| 时态名称      | 核心含义（什么时候用）                      | 标志性时间词 / 提示词                                     | 句子结构（以 “做某事” do sth 为例）                                                         | 动词变化关键规则                                                                                                                    | 例句（肯定句 + 疑问句）                                                                                                      |
+| --------- | -------------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **一般现在时** | 1. 日常习惯（每天 / 经常做）<br><br>2. 客观事实 | every day、usually、always、often                   | 肯定句：主语 + do/does（动词原形 / 三单）<br><br>疑问句：Do/Does + 主语 + 动词原形？                     | 1. 主语是 **I/you/we/they（非三单）**：动词用 **原形**（do）<br><br>2. 主语是 **he/she/it（三单）**：动词加 **s/es**（do→does）                          | 肯定：She **does** homework every day.<br><br>疑问：**Does** she do homework every day?                                  |
+| **现在进行时** | 此刻正在做的动作（动作正在发生）                 | now、look、listen、at the moment                    | 肯定句：主语 + am/is/are + doing（动词 - ing）<br><br>疑问句：Am/Is/Are + 主语 + doing？         | 1. 所有主语都要搭配 **be 动词（am/is/are）**<br><br>2. 动词必须变 **ing 形式**（do→doing）<br><br>3. be 动词随主语变：I→am，he/she/it→is，you/we/they→are | 肯定：They **are doing** homework now.<br><br>疑问：**Are** they doing homework now?                                     |
+| **一般过去时** | 过去发生、已结束的动作（不强调 “正在”）            | yesterday、last week、just now、ago                 | 肯定句：主语 + did（动词过去式）<br><br>疑问句：Did + 主语 + 动词原形？                                 | 1. 所有主语都用 **动词过去式**（do→did，eat→ate）<br><br>2. 疑问句必须用 **Did 开头**，后面动词变回 **原形**（不能用过去式）                                       | 肯定：He **did** homework yesterday.<br><br>疑问：**Did** he do homework yesterday?                                      |
+| **过去进行时** | 过去某个 “具体时间点” 正在做的动作              | at 8pm last night、this time yesterday、when（当… 时） | 肯定句：主语 + was/were + doing（动词 - ing）<br><br>疑问句：Was/Were + 主语 + doing？           | 1. 搭配 **be 动词过去式（was/were）**：he/she/it→was，you/we/they→were<br><br>2. 动词必须变 **ing 形式**（do→doing）                            | 肯定：We **were doing** homework at 8pm last night.<br><br>疑问：**Were** you doing homework at 8pm last night?          |
+| **一般将来时** | 未来要做的动作（计划 / 临时决定）               | tomorrow、next week、will、gonna                    | 肯定句：①主语 + will + 动词原形 ②主语 + am/is/are gonna + 动词原形<br><br>疑问句：Will + 主语 + 动词原形？ | 1. “will” 后面永远用 **动词原形**（不管主语是谁）<br><br>2. “gonna” 必须搭配 **be 动词（am/is/are）**，后面也用原形                                         | 肯定：①I **will do** homework tomorrow. ②I’m gonna do homework tomorrow.<br><br>疑问：**Will** you do homework tomorrow? |
