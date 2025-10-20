@@ -60,6 +60,32 @@ lego-ttam 核心接口梳理
 # 2025年10月13日
 
 - [x] 锚点召回放量5% ✅ 2025-10-15
+- [x] lego 代码 ✅ 2025-10-16
+- [x] oncall 报警 ✅ 2025-10-16
 
 ## 2025年10月15日
 - [x] 锚点召回放量20% ✅ 2025-10-15
+- [x] lego 代码 ✅ 2025-10-16
+- [x] oncall 报警 ✅ 2025-10-16
+
+
+
+
+
+- [x] 审核链路的素材put流程排查 ✅ 2025-10-16
+
+- [ ] tt_ads接口安全工单
+	- [x] get_video_posters、get_cover_uri 两个接口加开关 material_permission_check_config 观察指标 ad.platform.tt_ads.check_material_permission ✅ 2025-10-20
+		- [x] bytediff ✅ 2025-10-20
+		- [x] 发布单 ✅ 2025-10-20
+	https://cloud-i18n.bytedance.net/tcc/detail/5508/config?x-resource-account=i18n&x-bc-region-id=bytedance&env=prod&region=MVAALI&confspace=default
+	- [ ] get_video_meta_info 接口跟进前端下线。
+- [x] 锚点 放量百分之40% ✅ 2025-10-20
+
+
+dev
+- [ ] creation rpc panic @lz
+- [ ] creator ac @xy
+
+oncall
+- [ ] creative_platorm_rpc_i18n 分页查询缺少某一素材 可用vid查询
