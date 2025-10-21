@@ -84,7 +84,18 @@ lego-ttam 核心接口梳理
 
 
 dev
-- [ ] creation rpc panic @lz
+- [ ] creation rpc panic @lz ⏳ 2025-10-28
+流程
+```plaintext
+UpdateCreative（handler.go:70）
+→ CreativeAppSrv.UpdateCreative（creative_write_srv.go:167）
+→ 执行创意构建工作流（创建DB模型）
+→ CreativeEntityToDB（creative_repo.go:60）
+→ SmartPlusPlusTemplateEntityToDB（media_list.go:436）
+→ ConvertToMediaModel（media.go:672）
+→ ConvertToMediaModelByCarousel（media.go:681）
+→ BuildImageInfoModels（media.go:175）→ 触发panic
+```
 - [ ] creator ac @xy
 
 oncall
