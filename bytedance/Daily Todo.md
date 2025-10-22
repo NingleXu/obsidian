@@ -74,16 +74,18 @@ lego-ttam 核心接口梳理
 
 - [x] 审核链路的素材put流程排查 ✅ 2025-10-16
 
-- [ ] tt_ads接口安全工单
+- [x] tt_ads接口安全工单 ✅ 2025-10-22
 	- [x] get_video_posters、get_cover_uri 两个接口加开关 material_permission_check_config 观察指标 ad.platform.tt_ads.check_material_permission ✅ 2025-10-20
 		- [x] bytediff ✅ 2025-10-20
 		- [x] 发布单 ✅ 2025-10-20
 	https://cloud-i18n.bytedance.net/tcc/detail/5508/config?x-resource-account=i18n&x-bc-region-id=bytedance&env=prod&region=MVAALI&confspace=default
+		- [ ]  放量节奏
+			- 22号 10% 24号 50 % 27号100%
 	- [ ] get_video_meta_info 接口跟进前端下线。
 - [x] 锚点 放量百分之40% ✅ 2025-10-20
 
 
-dev
+DEV
 - [ ] creation rpc panic @lz ⏳ 2025-10-28
 流程
 ```plaintext
@@ -96,7 +98,14 @@ UpdateCreative（handler.go:70）
 → ConvertToMediaModelByCarousel（media.go:681）
 → BuildImageInfoModels（media.go:175）→ 触发panic
 ```
-- [ ] creator ac @xy
 
-oncall
-- [ ] creative_platorm_rpc_i18n 分页查询缺少某一素材 可用vid查询
+
+- [ ] creator ac @xy ⏳ 2025-10-31
+问题:
+1. 原生推、原生拉
+
+## oncall
+- [x] creative_platorm_rpc_i18n 分页查询缺少某一素材 可用vid查询 ✅ 2025-10-22
+
+## 工单
+- [ ] lego_core db 扩容
