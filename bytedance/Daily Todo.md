@@ -85,8 +85,8 @@ lego-ttam 核心接口梳理
 - [x] 锚点 放量百分之40% ✅ 2025-10-20
 
 
-DEV
-- [ ] creation rpc panic @lz ⏳ 2025-10-28
+## DEV
+- [x] creation rpc panic @lz ⏳ 2025-10-28 ✅ 2025-10-28
 流程
 ```plaintext
 UpdateCreative（handler.go:70）
@@ -99,8 +99,7 @@ UpdateCreative（handler.go:70）
 → BuildImageInfoModels（media.go:175）→ 触发panic
 ```
 
-
-- [ ] creator ac @xy ⏳ 2025-10-31
+- [x] creator ac @xy ⏳ 2025-10-31 ✅ 2025-10-28
 问题:
 1. 原生推、原生拉
 
@@ -108,4 +107,12 @@ UpdateCreative（handler.go:70）
 - [x] creative_platorm_rpc_i18n 分页查询缺少某一素材 可用vid查询 ✅ 2025-10-22
 
 ## 工单
-- [ ] lego_core db 扩容
+- [x] lego_core db 扩容 ✅ 2025-10-28
+
+
+
+
+
+
+2025年10月28日
+
