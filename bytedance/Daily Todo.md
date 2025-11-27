@@ -114,5 +114,45 @@ UpdateCreative（handler.go:70）
 
 
 
-2025年10月28日
+### 2025年10月28日
+- [x] material_name 加上后的验证 ✅ 2025-10-29
+- [ ] AIGC渠道的Auto_pull的改动
+	- aigc 召回加上 compain id (input_params)
+	- ac增补的场景调用 aigc 透传参数 （input_params)
 
+ - ac增补的 aigc不要过滤历史 history的 aigc素材 (AIGCVideoHistoryFilter 里做判断逻辑)
+ - ac增补的  history_provider  过滤掉 aigc素材 (新增filter然后 通过 placement_id 来判断 ?)
+
+
+## 2025年10月30日
+AIGC渠道的Auto_pull的改动
+1. 和振健、慧斌确定方案
+
+
+
+
+
+
+
+
+
+- [x] gre event 恢复 ✅ 2025-11-11
+
+
+明日计划
+- [x] 封板结束后改QueryMusics的限流 提升到300 ✅ 2025-11-14
+
+- [ ] redis集群下线
+- [ ] lego_business overpass建立
+- [ ] binlog 构建新的faas服务
+
+
+
+
+
+
+
+
+
+1. 
+2.  material_ref upsert 逻辑再确认一下
