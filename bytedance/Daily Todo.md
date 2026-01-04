@@ -154,5 +154,73 @@ AIGC渠道的Auto_pull的改动
 
 
 
-1. 
+1. material_ref 添加过滤指定 uri 去 build material_ref
+
+
+  material_draft 只保留 title 和 video的提取逻辑
 2.  material_ref upsert 逻辑再确认一下
+
+
+
+刘畅沟通记录
+1. 不需要顺序
+2. 批量查询nebula减少db压力
+3. material_ref 逻辑其实不难。事务保证即可。
+
+
+
+
+package event_distribution  
+  
+import (  
+    "context"  
+    "errors"    "fmt"  
+    "code.byted.org/ad/lego_faas_i18n/event_handlers/ad_galaxy_binlog_creative"    "code.byted.org/ad/lego_faas_i18n/event_handlers/ad_galaxy_binlog_material_draft"    "code.byted.org/ad/lego_faas_i18n/faas_conf"    "code.byted.org/ad/lego_faas_i18n/utils"    "code.byted.org/bytefaas/faas-go/events"    "code.byted.org/eventbus/pkg/faas"    "code.byted.org/gopkg/logs")  
+  
+func EventbusDistribution(ctx context.Context, ces []*events.CloudEvent) (*events.EventResponse, error) {  
+    eventBusEvent, err := faas.Faas2Eventbus(ces[0])  
+  
+    logs.CtxInfo(ctx, "[eventbus_event to faas]: %+v", eventBusEvent)  
+    if err != nil {  
+       logs.CtxError(ctx, "Convert cloud event to eventbus event Error, err:%+v", err)  
+       return utils.ResponseError(err)  
+    }  
+    headers := eventBusEvent.GetHeaders()  
+    if headers == nil {  
+       logs.CtxError(ctx, "headers is nil, event: %+v", eventBusEvent)  
+       return utils.ResponseError(errors.New(fmt.Sprintf("cannot get header, event: %+v", eventBusEvent)))  
+    }  
+    eventName := headers.GetEventName()  
+    if len(eventName) == 0 {  
+       logs.CtxError(ctx, "eventbus eventName is empty, event: %+v", eventBusEvent)  
+       return utils.ResponseError(errors.New(fmt.Sprintf("eventbus eventName is empty, event: %+v", eventBusEvent)))  
+    }  
+  
+    dataBytes, err := extractDataBytes(ctx, ces)  
+    if err != nil {  
+       logs.CtxError(ctx, "failed to get dataBytes, err:%+v", err)  
+       return utils.ResponseError(err)  
+    }  
+  
+    if headers.GetExtend() != nil && headers.GetExtend()["dbus_dml_type"] == "DELETE" {  
+       logs.CtxInfo(ctx, "ignore delete event, event: %+v", eventBusEvent)  
+       return utils.ResponseOK()  
+    }  
+  
+    switch eventName {  
+    case faas_conf.AdGalaxyBinlogConsumeTopic:  
+       if eventBusEvent.Group() == faas_conf.AdGalaxyBinlogCreativeConsumerGroup {  
+          return ad_galaxy_binlog_creative.AdGalaxyBinlogCreativeHandler(ctx, dataBytes)  
+       } else if eventBusEvent.Group() == faas_conf.AdGalaxyBinlogMaterialDraftConsumerGroup {  
+          return ad_galaxy_binlog_material_draft.AdGalaxyBinlogMaterialDraftHandler(ctx, dataBytes)  
+       } else {  
+          logs.CtxError(ctx, "topic: %s, Invalid consumer group: %s", faas_conf.AdGalaxyBinlogConsumeTopic, eventBusEvent.Group())  
+          return utils.ResponseError(fmt.Errorf("invalid consumer group: %s", eventBusEvent.Group()))  
+       }  
+    default:  
+       logs.CtxError(ctx, "Invalid topic: %s", eventName)  
+    }  
+  
+    return utils.ResponseError(fmt.Errorf("invalid eventName: %s", eventName))  
+}
+
